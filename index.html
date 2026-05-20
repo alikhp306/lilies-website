@@ -1167,9 +1167,9 @@
 
   <!-- CATEGORY TABS -->
   <div class="gallery-tabs reveal">
-    <button class="gallery-tab active" data-tab="baby-shower">Baby Shower <span class="tab-count">11</span></button>
+    <button class="gallery-tab" data-tab="baby-shower">Baby Shower <span class="tab-count">11</span></button>
     <button class="gallery-tab" data-tab="birthday">Birthday <span class="tab-count">16</span></button>
-    <button class="gallery-tab" data-tab="centerpiece">Centerpiece <span class="tab-count">14</span></button>
+    <button class="gallery-tab active" data-tab="centerpiece">Centerpiece <span class="tab-count">14</span></button>
     <button class="gallery-tab" data-tab="corporate">Corporate <span class="tab-count">10</span></button>
     <button class="gallery-tab" data-tab="party">Party Setup <span class="tab-count">3</span></button>
     <button class="gallery-tab" data-tab="wedding">Wedding <span class="tab-count">5</span></button>
@@ -1177,7 +1177,7 @@
   </div>
 
   <!-- BABY SHOWER PANEL -->
-  <div class="gallery-panel active" id="tab-baby-shower">
+  <div class="gallery-panel" id="tab-baby-shower">
     <div class="gallery-grid">
       <div class="gallery-item tall"><img src="gallery/baby-shower/bs-01.jpg" alt="Baby shower blue balloon arch with BABY blocks" loading="lazy"><div class="gallery-label">Blue Balloon Arch</div></div>
       <div class="gallery-item"><img src="gallery/baby-shower/bs-02.jpg" alt="Parents to Bee baby shower balloon arch" loading="lazy"><div class="gallery-label">Parents to Bee</div></div>
@@ -1218,7 +1218,7 @@
   </div>
 
   <!-- CENTERPIECE PANEL -->
-  <div class="gallery-panel" id="tab-centerpiece">
+  <div class="gallery-panel active" id="tab-centerpiece">
     <div class="gallery-grid">
       <div class="gallery-item tall"><img src="gallery/centerpiece/cp-10.jpg" alt="Elegant wedding table floral centerpiece" loading="lazy"><div class="gallery-label">Wedding Table</div></div>
       <div class="gallery-item"><img src="gallery/centerpiece/cp-07.jpg" alt="Champagne bottle floral arrangement with gold balloon" loading="lazy"><div class="gallery-label">Champagne Floral</div></div>
@@ -1712,7 +1712,7 @@
   <p style="text-align:center; margin-top:24px; font-size:12px; color:rgba(253,251,248,0.3); font-style:italic;">💡 Share your latest reviews with us anytime to keep this section updated</p>
 
 <!-- CANCELLATION POLICY -->
-<section style="background:var(--blush); padding:60px 48px;">
+<section id="policy" style="background:var(--blush); padding:60px 48px;">
   <div style="max-width:800px; margin:0 auto;">
     <span class="section-eyebrow">Booking & Payments</span>
     <h2 class="section-title" style="font-size:clamp(28px,4vw,42px);">Cancellation & <em>Refund Policy</em></h2>
@@ -1771,9 +1771,11 @@
     <a href="#about">About</a>
     <a href="#reviews">Reviews</a>
     <a href="#contact">Contact</a>
+    <a href="#policy">Policy</a>
   </div>
   <div class="footer-divider"></div>
-  <p class="footer-copy">© 2025 Lilies Petal & Breeze · liliespb.com · Seattle Area · All rights reserved</p>
+  <p class="footer-copy">© <span id="footer-year"></span> Lilies Petal & Breeze · liliespb.com · Seattle Area · All rights reserved</p>
+  <script>document.getElementById('footer-year').textContent = new Date().getFullYear();</script>
 </footer>
 
 <!-- WHATSAPP FLOATING BUTTON -->
