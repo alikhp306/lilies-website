@@ -1574,10 +1574,22 @@
         </div>
         <div class="form-group">
           <label>How would you like us to contact you? *</label>
-          <select id="f-contact-method" required>
-            <option value="whatsapp">WhatsApp (fastest response)</option>
-            <option value="email">Email</option>
-          </select>
+          <div style="display:flex; flex-direction:column; gap:12px; margin-top:8px;">
+            <label style="display:flex; align-items:center; gap:10px; cursor:pointer; padding:12px; border:1px solid var(--border); border-radius:8px; transition:all 0.2s;" onmouseover="this.style.borderColor='var(--rose)'" onmouseout="if(!this.querySelector('input').checked) this.style.borderColor='var(--border)'">
+              <input type="radio" name="contact-method" id="f-contact-whatsapp" value="whatsapp" checked style="width:18px; height:18px; cursor:pointer;">
+              <div style="flex:1;">
+                <div style="font-weight:500; color:var(--plum); margin-bottom:2px;">WhatsApp</div>
+                <div style="font-size:12px; color:var(--text-md);">Fastest response — usually within a few hours</div>
+              </div>
+            </label>
+            <label style="display:flex; align-items:center; gap:10px; cursor:pointer; padding:12px; border:1px solid var(--border); border-radius:8px; transition:all 0.2s;" onmouseover="this.style.borderColor='var(--rose)'" onmouseout="if(!this.querySelector('input').checked) this.style.borderColor='var(--border)'">
+              <input type="radio" name="contact-method" id="f-contact-email" value="email" style="width:18px; height:18px; cursor:pointer;">
+              <div style="flex:1;">
+                <div style="font-weight:500; color:var(--plum); margin-bottom:2px;">Email</div>
+                <div style="font-size:12px; color:var(--text-md);">We'll get back to you within 24-48 hours</div>
+              </div>
+            </label>
+          </div>
         </div>
         <div class="form-group">
           <label>Event Type *</label>
@@ -1937,7 +1949,7 @@
     e.preventDefault();
     const name     = document.getElementById('f-name').value.trim();
     const phone    = document.getElementById('f-phone').value.trim();
-    const method   = document.getElementById('f-contact-method').value;
+    const method   = document.querySelector('input[name="contact-method"]:checked').value;
     const type     = document.getElementById('f-type').value;
     const date     = document.getElementById('f-date').value;
     const location = document.getElementById('f-location').value.trim();
